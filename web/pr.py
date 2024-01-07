@@ -3,7 +3,7 @@ import pyqrcode
 from os import stat, remove
 # encryption/decryption buffer size - 64K
 bufferSize = 64 * 1024
-password = "foopassword"
+password = ""
 
 # encrypt
 with open("data.txt", "rb") as fIn:
