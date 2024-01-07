@@ -7,7 +7,7 @@ import datetime
 
 class TransferData:
     def __init__(self):
-        self.access_token = 'vwbSYLQ5AeAAAAAAAAAADc0z8vfU-BAOySHMHngutXOLlXizry0eAmXhYea86teA'
+        self.access_token = ''
     def upload_file(self, strpath):
         dbx =dropbox.Dropbox(self.access_token)
         head, tail = os.path.split(strpath)
