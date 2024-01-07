@@ -10,7 +10,7 @@ tdata=TransferData()
 class Encryptor:
     def __init__(self):
         self.bufferSize = 64 * 1024
-        self.password = "gXJQbLUMhzMjRqhTAQBdbpuPcKRPQA5bNYQ6QMa82VEsQhgEHfTUmRy9BNBhhwLS"
+        self.password = ""
     def encrypt_file(self, file_name):
         try:
             with open(file_name, "rb") as fIn:
