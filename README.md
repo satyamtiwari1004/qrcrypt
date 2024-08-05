@@ -20,7 +20,7 @@ QrCrypt is a secure data sharing application that uses QR codes for encrypted co
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/QrCrypt.git
+    git clone https://github.com/satyamtiwari1004/QrCrypt.git
     cd QrCrypt
     ```
 
