@@ -1,13 +1,14 @@
 import dropbox
 import os
 import datetime
+from dotenv import load_dotenv
 
-
+load_dotenv()
 
 
 class TransferData:
     def __init__(self):
-        self.access_token = ''
+        self.access_token = os.environ.get('DROPBOX_SECRET_KEY')
     def upload_file(self, strpath):
         dbx =dropbox.Dropbox(self.access_token)
         head, tail = os.path.split(strpath)
@@ -20,8 +21,9 @@ class TransferData:
     def download_file(self,fileto1):
         try:
             dbx =dropbox.Dropbox(self.access_token)
-            path="C:/QrCrypt"+fileto1
-            head, tail = os.path.split(path)
+            home_directory = os.path.expanduser( '~' )
+            path=os.path.join( home_directory,"QrCrpyt",fileto1)
+            head = os.path.join( home_directory,"QrCrpyt")
             self.createdir(head)
             with open(path, "wb") as f:
                     metadata, res = dbx.files_download(path=fileto1)

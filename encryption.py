@@ -4,13 +4,18 @@ import os.path
 from os import listdir
 from os.path import isfile, join
 from os import stat, remove
-from test import TransferData
+from dropboxapi import TransferData
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 tdata=TransferData()
+
 class Encryptor:
     def __init__(self):
         self.bufferSize = 64 * 1024
-        self.password = ""
+        self.password = os.environ.get('ENCRYPTION_KEY')
     def encrypt_file(self, file_name):
         try:
             with open(file_name, "rb") as fIn:
